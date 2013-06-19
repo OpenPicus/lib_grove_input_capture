@@ -103,7 +103,7 @@ int *ICCON2Rs [] = {
 	};
 
 
-#if defined (FLYPORT)
+#if ( (defined FLYPORT_WF) || (defined FLYPORT))
 //Flyport pins for Input Capturing function  for WIFI module
 const BYTE ICPos[] = {
 	0,  10,  0, 17, 16,  30, 45, 2, 
