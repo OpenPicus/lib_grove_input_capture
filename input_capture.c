@@ -103,7 +103,7 @@ int *ICCON2Rs [] = {
 	};
 
 
-#if ( (defined FLYPORT_WF) || (defined FLYPORT))
+#if ( (defined FLYPORT_B) || (defined FLYPORT_G) )
 //Flyport pins for Input Capturing function  for WIFI module
 const BYTE ICPos[] = {
 	0,  10,  0, 17, 16,  30, 45, 2, 
@@ -111,8 +111,17 @@ const BYTE ICPos[] = {
 	8,6,9,7,0,14,29
 	};
 
-#elif defined (FLYPORTETH)
-//Flyport pins for Input Capturing function  for ETH module
+#elif ( defined (FLYPORT_ETH) || defined(FLYPORT_LITE))
+//Flyport pins for Input Capturing function  for ETH & LITE module
+const BYTE ICPos[] = {
+	0,  10,  0, 17, 16,  30, 45, 2, 
+	4, 3,  12,  11, 24, 23, 22,
+	8,6,9,7,0,14,29
+	};
+	
+#elif defined (FLYPORT_GPRS)
+//Flyport pins for Input Capturing function  for GPRS module
+#error ICPOS REGISTERS NOT DEFINED FOR GPRS
 const BYTE ICPos[] = {
 	0,  10,  0, 17, 16,  30, 45, 2, 
 	4, 3,  12,  11, 24, 23, 22,
