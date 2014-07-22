@@ -175,6 +175,7 @@ void __attribute__((interrupt, no_auto_psv)) _IC3Interrupt(void)
 	icvalue = IC3BUF;
  	timer_32bit = IC4BUF;
 	timer_32bit = timer_32bit <<16;
+	icvalue = icvalue |timer_32bit;
 	IFS2bits.IC3IF = 0;
 	icflag = 1;
 }
@@ -194,6 +195,7 @@ void __attribute__((interrupt, no_auto_psv)) _IC5Interrupt(void)
 	icvalue = IC5BUF;
  	timer_32bit = IC6BUF;
 	timer_32bit = timer_32bit <<16;
+	icvalue = icvalue |timer_32bit;
 	IFS2bits.IC5IF = 0;
 	icflag = 1;
 }
